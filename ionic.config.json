@@ -1,0 +1,7 @@
+{
+  "name": "clone-star-wars",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
