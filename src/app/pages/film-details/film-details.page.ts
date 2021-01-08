@@ -10,22 +10,23 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class FilmDetailsPage implements OnInit {
   film: any;
-  filmId = null;
-  constructor(private activatedRoute: ActivatedRoute, 
-              private apiService:ApiService) { }
+/*   filmId = null; */
+/*   constructor(private activatedRoute: ActivatedRoute, 
+              private apiService:ApiService) { } */
 
- async ngOnInit() {
+/*  async */ ngOnInit() {
 /*      this.activatedRoute.params.subscribe(
       (params:Params)=>  this.filmId = params.id    )
  */
-  this.film = await this.activatedRoute.params
+ /*  this.film = await this.activatedRoute.params
               .pipe(
                 concatMap(
                   (params:Params)=> this.apiService.getFilm$(params.id)
                 ),
                 first()
-              ).toPromise();
-  
+              ).toPromise(); */
+              console.log(history.state)
+      this.film = history.state;
 // this.activatedRoute.snapshot.paramMap.get('id');
   }
 

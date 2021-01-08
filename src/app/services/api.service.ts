@@ -11,6 +11,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  getFilms$(): Observable<any>{
+    return this.http.get(this.API_URL+'films/');
+  }
+
   getFilm$(id): Observable<any>{
     return this.http.get(this.API_URL+'films/'+id)
   }
