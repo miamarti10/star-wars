@@ -1,6 +1,7 @@
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import * as images from  "../../../assets/images.json";
 
 @Component({
   selector: 'app-films',
@@ -9,17 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmsPage implements OnInit {
 
+  films:any[];
   constructor(private router:Router, private navController: NavController) { }
 
   ngOnInit() {
+    this.films = images.data;
   }
 
-  openDetails(){
-    this.router.navigateByUrl(`/tabs/films/42`);
+  openDetails(film){
+    this.router.navigateByUrl(`/tabs/films/${film.id}`);
   }
 
-  goToPlanets(){
-      this.navController.navigateRoot(`/tabs/planets`);
-  }
 
 }

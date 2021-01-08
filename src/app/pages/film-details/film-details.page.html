@@ -1,18 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-back-button></ion-back-button>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-<!--       <ion-back-button
-          text="back"
-          icon="chevron-back">
-      </ion-back-button> -->
+      <ion-back-button defaultHref="/tabs/films"></ion-back-button>
     </ion-buttons>
-    <ion-title>filmDetails</ion-title>
+    <ion-title>{{film?.title}}</ion-title>
 
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 
-  {{filmId}}
+  <ion-card *ngIf="film">
+    <ion-card-content>
+      {{ film.opening_crawl }}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
