@@ -18,7 +18,7 @@ export class FilmDetailsPage implements OnInit {
   constructor(private favService:FavoriteService){}
 
   async favoriteFilm(){
-    await this.favService.favoriteFilm(this.film.id);
+    await this.favService.favoriteFilm(this.film.uid);
     this.isFavorite = true;
   }
  async ngOnInit() {
@@ -34,7 +34,7 @@ export class FilmDetailsPage implements OnInit {
               ).toPromise(); */
               console.log(history.state)
       this.film = history.state;
-      this.isFavorite = await this.favService.isFavorite(this.film.id);
+      this.isFavorite = await this.favService.isFavorite(this.film.uid);
 // this.activatedRoute.snapshot.paramMap.get('id');
   }
 

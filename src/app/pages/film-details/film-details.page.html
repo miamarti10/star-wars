@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/films"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{film?.title}}</ion-title>
+    <ion-title>{{film.properties?.title}}</ion-title>
     <ion-buttons slot="end">
       <ion-button *ngIf="isFavorite">
         <ion-icon name="star" slot="icon-only"></ion-icon>
@@ -20,7 +20,7 @@
 
   <ion-card *ngIf="film">
     <ion-card-content>
-      {{ film.opening_crawl }}
+      {{ film.properties?.opening_crawl }}
     </ion-card-content>
   </ion-card>
 </ion-content>

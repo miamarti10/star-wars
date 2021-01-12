@@ -5,9 +5,16 @@
 </ion-header>
 
 <ion-content  class="ion-padding">
+<ng-container *ngIf="!routeResolveData">
+  <div class=spinner>
+    <ion-spinner></ion-spinner>
+  </div>
+</ng-container>
+
 <ion-grid>
   <ion-row>
-    <ion-col *ngFor = "let film of (films | async)?.results" size="6"
+<!--     <ion-col *ngFor = "let film of (films | async)?.results" size="6" -->
+  <ion-col *ngFor = "let film of routeResolveData?.results" size="6"
               (click)='openDetails(film)'>
       <ion-card type="button" class="ion-text-center"
                 [ngStyle]="{'background-image':'url('+film.img+')'}"></ion-card>
